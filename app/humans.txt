@@ -1,0 +1,172 @@
+/* 人物（ People ） */
+
+
+
+		沈维忠（ Tony Stark ）,
+
+				手机（ Cell Phone ）：(+86)15921299022
+
+				个人全球统一标识（ Gravatar ）：//en.gravatar.com/swzcowboy/
+
+				个人主页（ Personal Homepage ）：//itonyyo.github.io/
+
+				Linkedin：//cn.linkedin.com/in/itonyyo/
+
+				Github：//github.com/iTonyYo/
+
+				Trello：//trello.com/shenweizhong/
+
+				Facebook：//www.facebook.com/shenweizhong/
+
+				Twitter：@iTonyYo
+
+				QQ：563214029
+
+				Tumblr：//itonyyo.tumblr.com/
+
+				Instagram：//instagram.com/itonyyo/
+
+				Medium：//medium.com/@itonyyo
+
+				Google+：//plus.google.com/114960355664861539339/
+
+				新浪微博（ Sina MicroBlog ）：//weibo.com/itonyyo/
+
+				WhatsApp：15921299022
+
+				微信（ WeChat ）：iTonyYo
+
+				Facebook Messenger：shenweizhong
+
+				Skype：live:swzyocowboy
+
+				Line：shenweizhong
+
+				电子邮箱（ Email ）：swzyocowboy@icloud.com, swzyocowboy@hotmail.com, iTonyYo@gmail.com, itonyyo@vip.qq.com, shenweizhong@facebook.com
+
+				来自（ From ）：江苏省淮安市 ( Huai'an City, Jiang'su Province )
+
+
+
+/* 团队（ TEAM ） */
+
+
+
+		中文编辑（ CH Translator ）：
+
+
+
+		Web设计师（ Web Designer ）：
+
+
+
+		用户体验设计师（ UX Designer ）：
+
+
+
+		UI设计师（ UI Designer ）：
+
+
+
+		插画师（ Illustrator ）：
+
+
+
+		前端开发人员（ Front-end Browser-side Developer ）：
+
+				① 沈维忠 ( Shen Weizhong / Tony Stakr )
+
+
+
+		服务器端开发人员（ Back-end Server-side Developer ）：
+
+
+
+		测试人员（ Testing Personnel ）：
+
+
+
+		标准监督人（ Standard Man ）：
+
+
+
+/* 感谢（ THANKS ） */
+
+
+
+				......
+
+
+
+/* 网站（ SITE ） */
+
+				最近更新（ Last update ）：2014年10月30日18时57分（ 18:57 10.30.2014 ）
+
+
+				语言（ Language ）：中文（ Chinese ）
+
+
+				文档类型（ Doctype ）：HTML5
+
+
+				标准（ Standards ）：
+
+
+					HTML5
+
+
+					CSS2.1/3.0/4.0
+
+
+					ECMASCRIPT 3/5
+
+
+				主要组件（ Main Components ）：
+
+
+					Reset CSS 2.0+
+
+
+					Html5shiv 3.7.2+
+
+
+					Modernizr 2.8.2+
+
+
+					jQuery 1.11.1+/2.1.1+
+
+
+				主要开发工具（ Main Development Tools ）：
+
+
+					Sublime Text 3 Build 3065+
+
+
+					Sprint 0.44 experimental build 0.44.0-14876 (release 6d2d33d80)+
+
+
+					Atom Text Editor 0.139.0+
+
+
+					NPM 1.4.28+
+
+
+					Grunt-CLI 0.1.13+
+
+
+					Grunt 0.4.5+
+
+
+					Node 0.10.33+
+
+
+					Git 1.9.4.msysgit.2+
+
+
+					Fiddler Web Debugger 4.4.9.4+
+
+
+					Adobe Photoshop CC 2014
+
+
+					Adobe Illustrator CC

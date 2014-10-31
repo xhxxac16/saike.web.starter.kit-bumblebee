@@ -1,0 +1,19 @@
+CACHE MANIFEST
+
+NETWORK:
+*
+
+CACHE:
+
+index.html
+
+app/public/ajax/lib/css/animate_css/3.2.0/animate.min.css
+app/public/ajax/lib/css/normalize/3.0.1/normalize.min.css
+
+app/public/ajax/lib/js/jquery_nicescroll/3.5.6/zoomico.png
+
+app/public/ajax/lib/js/html5shiv/3.7.2/html5shiv.min.js
+app/public/ajax/lib/js/modernizr/2.8.3/modernizr.min.js
+app/public/ajax/lib/js/wow/1.0.2/wow.min.js
+app/public/ajax/lib/js/jquery/2.1.1/jquery.min.js
+app/public/ajax/lib/js/jquery_nicescroll/3.5.6/jquery.nicescroll.min.js

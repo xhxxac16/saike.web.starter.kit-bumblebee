@@ -1,0 +1,19 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<i class="icon-home"></i>
+```
+*/
+.icon-5 {
+  background-image: url(../../img/saike.web.starter.kit-bumblebee/spritesheet.ui.png);
+  background-position: 0px -250px;
+  width: 809px;
+  height: 114px;
+}
+.icon-7 {
+  background-image: url(../../img/saike.web.starter.kit-bumblebee/spritesheet.ui.png);
+  background-position: 0px 0px;
+  width: 809px;
+  height: 250px;
+}
