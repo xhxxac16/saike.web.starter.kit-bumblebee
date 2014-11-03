@@ -93,7 +93,7 @@ grunt -version
 
 + 将生产目录（模拟）下所有项目独有、未压缩的 JavaScript 脚本移出至工程根目录下 " dev/javascript " 文件夹内。
 
-> 工程操作模式分类为 " 编辑模式 "，" 压缩模式 "，" 发布模式 " 3种。
+> 工程操作模式分类为 " 编辑模式 "，" 预发布模式 "，" 发布模式 " 3种。
 
 ####预览模式
 
@@ -149,7 +149,7 @@ grunt laj
 ```
 在编辑模式中，可以单独运行该命令对指定目录下的 " JavaScript " 脚本文件作语法、规范的检查。（ 命令化名全称： " lint app js " ）
 
-####编辑模式
+####预发布模式
 
 ```bash
 grunt ca
@@ -191,6 +191,8 @@ grunt sprites
 ```
 可以运行该命令按照预先定义好的规则合并指定目录下的需要被涉及的零散图片为 " CSS " 精灵图。
 
+####发布模式
+
 ```bash
 grunt p
 ```
@@ -203,10 +205,37 @@ grunt pwc
 
 
 
+主要工作流
+---------
+
+**编辑模式**：若 " app/ " 目录下 " HTML " 压缩状态为未压缩，则当前项目处于编辑模式。
+
+**预发布模式**：若 " app/resource/js/saike.web.starter.kit-bumblebee/ " 目录下 " JavaScript " 存在未压缩文件，且 " app/ " 目录下 " HTML " 不存在未压缩文件，则当前项目处于预发布模式。
+
+**发布模式**：若 " app/resource/js/saike.web.starter.kit-bumblebee/ " 目录下 " JavaScript " 不存在未压缩文件，且 " app/ " 目录下 " HTML " 不存在未压缩文件，则当前项目处于发布模式。
+
+使工程进入发布模式的命令存在两者，集成了所有压缩、合并等任务的发布命令可以直接在编辑模式运行，另一个则需要在其运行前先单独运行所有压缩、合并等任务：
+
+*编辑模式 -> 预发布模式 -> 发布模式*
+> grunt -> grunt ca / caa -> grunt p
+
+*编辑模式 -> 发布模式*
+> grunt -> grunt pwc
+
+若要进入编辑模式的项目先前已被发布过，则需要通过 'grunt eap' 命令使工程进入编辑模式，而非 'grunt (default)'。预发布模式只是进行了压缩、合并等任务，发布任务还会包括移出指定类型文件、使用 MD5 散列替换视图文件关联的静态资源文件名、生成/更新 HTML5 应用程序缓存清单等任务：
+
+*发布模式 -> 编辑模式 -> 预发布模式 -> 发布模式*
+> grunt p / grunt pwc -> grunt eap -> grunt ca / caa -> grunt p
+
+*发布模式 -> 编辑模式 -> 发布模式*
+> grunt p / grunt pwc -> grunt eap -> grunt pwc
+
+
+
 如何创建独属于你的拷贝
 --------------------
 
-如果你已经在自己的电脑上安装并配置了上述开发依赖，你可以克隆一份
+如果你已经在自己的电脑上安装并配置了上述[开发依赖](https://github.com/S-CHEXIANG/saike.web.starter.kit-bumblebee/tree/master#%E4%B8%BB%E8%A6%81%E5%BC%80%E5%8F%91%E4%BE%9D%E8%B5%96 '点击 · Click')，你可以克隆一份
 [*"saike.web.starter.kit-bumblebee" 主要镜像*](https://github.com/S-CHEXIANG/saike.web.starter.kit-bumblebee/ '点击 · Click') 副本至指定文件目录：
 
 ```bash
