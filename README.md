@@ -5,7 +5,7 @@
 
 ***你不一定会在这儿找到令你惊讶的东西，但是我们需要你的热情！^_^***
 
-[演示](http://s-chexiang.github.io/saike.web.starter.kit-bumblebee/ '点击 · Click')
+> [*演示*](http://s-chexiang.github.io/saike.web.starter.kit-bumblebee/app/ '点击 · Click')
 
 
 
