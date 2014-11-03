@@ -2,9 +2,15 @@
 
 	"name": "saike.web.starter.kit-bumblebee",
 
-	"description": "车享网",
+	"description": "上海汽车集团股份有限公司旗下上海赛可电子商务有限公司，轻量级混合前端工程模板。",
 
 	"keywords": [
+
+		"上海汽车集团",
+
+		"上汽",
+
+		"赛可",
 
 		"车享网",
 
@@ -24,23 +30,29 @@
 
 	},
 
-	"homepage": "",
+	"homepage": "http://S-CHEXIANG.github.io/saike.web.starter.kit-bumblebee",
 
 	"repository": {
 
 		"type": "git",
 
-		"url": ""
+		"url": "https://github.com/S-CHEXIANG/saike.web.starter.kit-bumblebee.git"
 
 	},
 
 	"bugs": {
 
-		"url": ""
+		"url": "https://github.com/S-CHEXIANG/saike.web.starter.kit-bumblebee/issues"
 
 	},
 
 	"private": true,
+
+	"scripts": {
+
+		"test": "grunt"
+
+	},
 
 	"engines": {
 
@@ -84,14 +96,16 @@
 
 		"grunt-newer": "^0.8.0",
 
+		"grunt-concurrent": "1.0.0",
+
 		"time-grunt": "^1.0.0",
 
 		"load-grunt-tasks": "^1.0.0",
 
-		"load-grunt-config": "^0.14.0"
+		"load-grunt-config": "^0.16.0"
 
 	},
 
-	"licenses": ""
+	"licenses": "GPLv2"
 
 }
