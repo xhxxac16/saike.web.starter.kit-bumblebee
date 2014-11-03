@@ -1,10 +1,22 @@
-车享网
-======
+轻量级混合前端工程模板
+====================
 上汽品质 · 全程畅享 · 专业 · 专注 · 信赖 · 保障
+上海赛可电子商务有限公司
 
 ***你不一定会在这儿找到令你惊讶的东西，但是我们需要你的热情！^_^***
 
-> 项目名称命名规则参阅 [*项目名称命名规则 & 描述*]( '点击 · Click')
+
+
+主要开发规范
+-----------
+
++ [*HTML 指南*](https://www.evernote.com/pub/itonyyo/htmlguide '点击 · Click')
+
++ [*CSS 指南*](https://www.evernote.com/pub/itonyyo/cssguide '点击 · Click')
+
++ [*JavaScript 指南*](https://www.evernote.com/pub/itonyyo/javascriptguide '点击 · Click')
+
++ [*工程模板指南*](https://www.evernote.com/pub/itonyyo/project-template-guide '点击 · Click')
 
 
 
@@ -45,6 +57,39 @@ node --version
 ```bash
 grunt -version
 ```
+
+
+
+主要构建任务
+-----------
+
++ 在 WEB 容器内实时开发；
+
++ 压缩 HTML 超文本标记文件；
+
++ 压缩 CSS 样式表文件；
+
++ 合并公共 / 页面独有样式表文件；
+
++ 针对 CSS 样式表文件作语法、规范的检测；
+
++ 压缩 JavaScript 脚本文件；
+
++ 针对 JavaScript 脚本文件作语法、规范的检测；
+
++ 合并公共 / 页面独有脚本文件；
+
++ 合并精灵图；
+
++ 转换并替换 CSS 样式表内链接的图片为 Data URI 的表现形式；
+
++ 生成、更新 HTML5 应用缓存清单文件；
+
++ 为 CSS 样式表文件添加 MD5 散列，并替换相关 HTML 超文本标记文件内对应的 " Link " 标签的属性，以供实时更新缓存；
+
++ 为 JavaScript 脚本文件添加 MD5 散列，并替换相关 HTML 超文本标记文件内对应的 " Script " 标签的属性，以供实时更新缓存；
+
++ 将生产目录（模拟）下所有项目独有、未压缩的 JavaScript 脚本移出至工程根目录下 " dev/javascript " 文件夹内。
 
 
 
