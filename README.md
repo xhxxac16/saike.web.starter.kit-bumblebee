@@ -205,14 +205,14 @@ grunt pwc
 --------------------
 
 如果你已经在自己的电脑上安装并配置了上述开发依赖，你可以克隆一份
-[*"saike.web.starter.kit-bumblebee" 主要镜像*](https://github.com/iTonyYo/saike.web.starter.kit-bumblebee/ '点击 · Click') 副本至指定文件目录：
+[*"saike.web.starter.kit-bumblebee" 主要镜像*](https://github.com/S-CHEXIANG/saike.web.starter.kit-bumblebee/ '点击 · Click') 副本至指定文件目录：
 
 ```bash
-git clone https://github.com/iTonyYo/saike.web.starter.kit-bumblebee.git
+git clone https://github.com/S-CHEXIANG/saike.web.starter.kit-bumblebee.git
 ```
 
 你也可以使用 [*Github for Windows*](https://windows.github.com '点击 · Click') 或者 [*GitHub for Mac*](https://mac.github.com '点击 · Click') 客户端从
-[*"saike.web.starter.kit-bumblebee" 主要镜像*](https://github.com/iTonyYo/saike.web.starter.kit-bumblebee/ '点击 · Click') 位置克隆一份副本。
+[*"saike.web.starter.kit-bumblebee" 主要镜像*](https://github.com/S-CHEXIANG/saike.web.starter.kit-bumblebee/ '点击 · Click') 位置克隆一份副本。
 
 克隆完全后，进入 "saike.web.starter.kit-bumblebee" 文件夹，安装所有基于 [*Grunt*](http://gruntjs.com/ '点击 · Click') 的开发依赖：
 
