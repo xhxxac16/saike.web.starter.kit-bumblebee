@@ -87,24 +87,24 @@
 <a name="%E4%B8%BB%E8%A6%81%E6%9E%84%E5%BB%BA%E4%BB%BB%E5%8A%A1" class="anchor" href="#%E4%B8%BB%E8%A6%81%E6%9E%84%E5%BB%BA%E4%BB%BB%E5%8A%A1"><span class="octicon octicon-link"></span></a>主要构建任务</h2>
 
 <ul>
-<li><p>在 WEB 容器内实时开发；</p></li>
-<li><p>压缩 HTML 超文本标记文件；</p></li>
-<li><p>压缩 CSS 样式表文件；</p></li>
+<li><p>在 <code>WEB</code> 容器内实时开发；</p></li>
+<li><p>压缩 <code>HTML</code> 超文本标记文件；</p></li>
+<li><p>压缩 <code>CSS</code> 样式表文件；</p></li>
 <li><p>合并公共 / 页面独有样式表文件；</p></li>
-<li><p>针对 CSS 样式表文件作语法、规范的检测；</p></li>
-<li><p>压缩 JavaScript 脚本文件；</p></li>
-<li><p>针对 JavaScript 脚本文件作语法、规范的检测；</p></li>
+<li><p>针对 <code>CSS</code> 样式表文件作语法、规范的检测；</p></li>
+<li><p>压缩 <code>JavaScript</code> 脚本文件；</p></li>
+<li><p>针对 <code>JavaScript</code> 脚本文件作语法、规范的检测；</p></li>
 <li><p>合并公共 / 页面独有脚本文件；</p></li>
 <li><p>合并精灵图；</p></li>
-<li><p>转换并替换 CSS 样式表内链接的图片为 Data URI 的表现形式；</p></li>
-<li><p>生成、更新 HTML5 应用缓存清单文件；</p></li>
-<li><p>为 CSS 样式表文件添加 MD5 散列，并替换相关 HTML 超文本标记文件内对应的 " Link " 标签的属性，以供实时更新缓存；</p></li>
-<li><p>为 JavaScript 脚本文件添加 MD5 散列，并替换相关 HTML 超文本标记文件内对应的 " Script " 标签的属性，以供实时更新缓存；</p></li>
-<li><p>将生产目录（模拟）下所有项目独有、未压缩的 JavaScript 脚本移出至工程根目录下 " dev/javascript " 文件夹内。</p></li>
+<li><p>转换并替换 <code>CSS</code> 样式表内链接的图片为 <code>Data URI</code> 的表现形式；</p></li>
+<li><p>生成、更新 <code>HTML5</code> 应用缓存清单文件；</p></li>
+<li><p>为 <code>CSS</code> 样式表文件添加 <code>MD5</code> 散列，并替换相关 <code>HTML</code> 超文本标记文件内对应的 <code>Link</code> 标签的属性，以供实时更新缓存；</p></li>
+<li><p>为 <code>JavaScript</code> 脚本文件添加 <code>MD5</code> 散列，并替换相关 <code>HTML</code> 超文本标记文件内对应的 <code>Script</code> 标签的属性，以供实时更新缓存；</p></li>
+<li><p>将生产目录（模拟）下所有项目独有、未压缩的 <code>JavaScript</code> 脚本移出至工程根目录下 <code>dev/javascript</code> 文件夹内。</p></li>
 </ul>
 
 <blockquote>
-<p>工程操作模式分类为 " 编辑模式 "，" 压缩模式 "，" 发布模式 " 3种。</p>
+<p>工程操作模式分类为 <code>编辑模式</code>，<code>预发布模式</code>，<code>发布模式</code> 3种。</p>
 </blockquote>
 
 <h4>
@@ -113,12 +113,12 @@
 <div class="highlight highlight-bash"><pre>grunt pa
 </pre></div>
 
-<p>可以通过这个命令预览工程内具体、主要成果。（ 命令化名全称： " preview app " ）</p>
+<p>可以通过这个命令预览工程内具体、主要成果。（ 命令化名全称： <code>preview app</code> ）</p>
 
 <div class="highlight highlight-bash"><pre>grunt pr
 </pre></div>
 
-<p>工程中除了 " Markdown " 格式的 " README " （ 工程描述 ）文件之外，还包含 " HTML " 表现形式的 " README " （ 工程描述 ）元素。可以通过这个命令在本地预览/查看。（ 命令化名全称： " preview readme " ）</p>
+<p>工程中除了 <code>Markdown</code> 格式的 <code>README</code> （ 工程描述 ）文件之外，还包含 <code>HTML</code> 表现形式的 <code>README</code> （ 工程描述 ）元素。可以通过这个命令在本地预览/查看。（ 命令化名全称： <code>preview readme</code> ）</p>
 
 <h4>
 <a name="%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F" class="anchor" href="#%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F"><span class="octicon octicon-link"></span></a>编辑模式</h4>
@@ -126,100 +126,156 @@
 <div class="highlight highlight-bash"><pre>grunt
 </pre></div>
 
-<p>工程中的 " HTML " 分为 3 种类型：可编辑版，预发布版，压缩版。默认任务会假定 " app/ " 目录下存在的都是压缩后的 " HTML " 文件，会先将这些" HTML " 文件替换成从 " dev/html/ " 目录下抽取出的相对应、可编辑、未压缩的 " HTML " 文件。工程被克隆下来后，优先运行该命令，以进入编辑模式。</p>
+<p>工程中的 <code>HTML</code> 分为 <code>3</code> 种类型：可编辑版，预发布版，压缩版。默认任务会假定 <code>app/</code> 目录下存在的都是压缩后的 <code>HTML</code> 文件，会先将这些<code>HTML</code> 文件替换成从 <code>dev/html/</code> 目录下抽取出的相对应、可编辑、未压缩的 <code>HTML</code> 文件。工程被克隆下来后，优先运行该命令，以进入编辑模式。</p>
 
 <div class="highlight highlight-bash"><pre>grunt eap
 </pre></div>
 
-<p>工程被发布时会将未压缩的 JavaScript 移出可访问目录，以尽可能保证相关实现逻辑的保密性，所以如果工程为发布后的状态，那么一定要通过该命令进入正常的编辑模式。（ 命令化名全称： " edit after publish " ）</p>
+<p>工程被发布时会将未压缩的 JavaScript 移出可访问目录，以尽可能保证相关实现逻辑的保密性，所以如果工程为发布后的状态，那么一定要通过该命令进入正常的编辑模式。（ 命令化名全称： <code>edit after publish</code> ）</p>
 
 <div class="highlight highlight-bash"><pre>grunt er
 </pre></div>
 
-<p>工程中除了 " Markdown " 格式的 " README " （ 工程描述 ）文件之外，还包含 " HTML " 表现形式的 " README " （ 工程描述 ）元素。可以运行该命令进入 TA 的编辑模式。（ 命令化名全称： " edit readme " ）</p>
+<p>工程中除了 <code>Markdown</code> 格式的 <code>README</code> （ 工程描述 ）文件之外，还包含 <code>HTML</code> 表现形式的 <code>README</code> （ 工程描述 ）元素。可以运行该命令进入 <code>TA</code> 的编辑模式。（ 命令化名全称： <code>edit readme</code> ）</p>
 
 <div class="highlight highlight-bash"><pre>grunt bahtml
 </pre></div>
 
-<p>在编辑模式中，可以运行该命令及时将对 "app" 目录下的 " HTML " 的编辑成果备份到 " dev/html " 目录下。（ 命令化名全称： " backup app html " ）</p>
+<p>在编辑模式中，可以运行该命令及时将对 <code>app</code> 目录下的 <code>HTML</code> 的编辑成果备份到 <code>dev/html</code> 目录下。（ 命令化名全称： <code>backup app html</code> ）</p>
 
 <div class="highlight highlight-bash"><pre>grunt brhtml
 </pre></div>
 
-<p>在编辑模式中，可以运行该命令及时将对项目根目录下的 " HTML " 的编辑成果备份到 " dev/gh-pages/html " 目录下。（ 命令化名全称： " backup readme html " ）</p>
+<p>在编辑模式中，可以运行该命令及时将对项目根目录下的 <code>HTML</code> 的编辑成果备份到 <code>dev/gh-pages/html</code> 目录下。（ 命令化名全称： <code>backup readme html</code> ）</p>
 
 <div class="highlight highlight-bash"><pre>grunt lall
 </pre></div>
 
-<p>在编辑模式中，可以单独运行该命令对指定目录下的 " CSS " 样式表文件、" JavaScript " 脚本文件作语法、规范的检查。（ 命令化名全称： " lint all " ）</p>
+<p>在编辑模式中，可以单独运行该命令对指定目录下的 <code>CSS</code> 样式表文件、<code>JavaScript</code> 脚本文件作语法、规范的检查。（ 命令化名全称： <code>lint all</code> ）</p>
 
 <div class="highlight highlight-bash"><pre>grunt lac
 </pre></div>
 
-<p>在编辑模式中，可以单独运行该命令对指定目录下的 " CSS " 样式表文件作语法、规范的检查。（ 命令化名全称： " lint app css " ）</p>
+<p>在编辑模式中，可以单独运行该命令对指定目录下的 <code>CSS</code> 样式表文件作语法、规范的检查。（ 命令化名全称： <code>lint app css</code> ）</p>
 
 <div class="highlight highlight-bash"><pre>grunt laj
 </pre></div>
 
-<p>在编辑模式中，可以单独运行该命令对指定目录下的 " JavaScript " 脚本文件作语法、规范的检查。（ 命令化名全称： " lint app js " ）</p>
+<p>在编辑模式中，可以单独运行该命令对指定目录下的 <code>JavaScript</code> 脚本文件作语法、规范的检查。（ 命令化名全称： <code>lint app js</code> ）</p>
 
 <h4>
-<a name="%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F-1" class="anchor" href="#%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F-1"><span class="octicon octicon-link"></span></a>编辑模式</h4>
+<a name="%E9%A2%84%E5%8F%91%E5%B8%83%E6%A8%A1%E5%BC%8F" class="anchor" href="#%E9%A2%84%E5%8F%91%E5%B8%83%E6%A8%A1%E5%BC%8F"><span class="octicon octicon-link"></span></a>预发布模式</h4>
 
 <div class="highlight highlight-bash"><pre>grunt ca
 </pre></div>
 
-<p>可以运行该命令先备份所有对 " HTML " 的编辑成果；同时压缩 " HTML ", " CSS ", " JavaScript " 文件（注意！未修改或未更新的情况下是不会重新压缩的）；最后按预先定义好的的合并规则自动合并相关 " CSS ", " JavaScript " 文件。（ 命令化名全称： " compress app " ）</p>
+<p>可以运行该命令先备份所有对 <code>HTML</code> 的编辑成果；同时压缩 <code>HTML</code>, <code>CSS</code>, <code>JavaScript</code> 文件（注意！未修改或未更新的情况下是不会重新压缩的）；最后按预先定义好的的合并规则自动合并相关 <code>CSS</code>, <code>JavaScript</code> 文件。（ 命令化名全称： <code>compress app</code> ）</p>
 
 <div class="highlight highlight-bash"><pre>grunt caa
 </pre></div>
 
-<p>可以运行该命令先备份所有对 " HTML " 的编辑成果；同时强制（未修改或未更新的情况下也会被再重新压缩一次）压缩 " HTML ", " CSS ", " JavaScript " 文件；最后按预先定义好的的合并规则自动合并相关 " CSS ", " JavaScript " 文件。（ 命令化名全称： " compress app absolutely " ）</p>
+<p>可以运行该命令先备份所有对 <code>HTML</code> 的编辑成果；同时强制（未修改或未更新的情况下也会被再重新压缩一次）压缩 <code>HTML</code>, <code>CSS</code>, <code>JavaScript</code> 文件；最后按预先定义好的的合并规则自动合并相关 <code>CSS</code>, <code>JavaScript</code> 文件。（ 命令化名全称： <code>compress app absolutely</code> ）</p>
 
 <div class="highlight highlight-bash"><pre>grunt caj
 </pre></div>
 
-<p>可以运行该命令单独压缩" JavaScript " 文件（注意！未修改或未更新的情况下是不会重新压缩的）；最后按预先定义好的的合并规则自动合并相关 " JavaScript " 文件。（ 命令化名全称： " compress app javascript " ）</p>
+<p>可以运行该命令单独压缩<code>JavaScript</code> 文件（注意！未修改或未更新的情况下是不会重新压缩的）；最后按预先定义好的的合并规则自动合并相关 <code>JavaScript</code> 文件。（ 命令化名全称： <code>compress app javascript</code> ）</p>
 
 <div class="highlight highlight-bash"><pre>grunt caja
 </pre></div>
 
-<p>可以运行该命令单独强制（未修改或未更新的情况下也会被再重新压缩一次）压缩" JavaScript " 文件；最后按预先定义好的的合并规则自动合并相关 " JavaScript " 文件。（ 命令化名全称： " compress app javascript absolutely " ）</p>
+<p>可以运行该命令单独强制（未修改或未更新的情况下也会被再重新压缩一次）压缩<code>JavaScript</code> 文件；最后按预先定义好的的合并规则自动合并相关 <code>JavaScript</code> 文件。（ 命令化名全称： <code>compress app javascript absolutely</code> ）</p>
 
 <div class="highlight highlight-bash"><pre>grunt cac
 </pre></div>
 
-<p>可以运行该命令单独压缩" CSS " 文件（注意！未修改或未更新的情况下是不会重新压缩的）；最后按预先定义好的的合并规则自动合并相关 " CSS " 文件。（ 命令化名全称： " compress app css " ）</p>
+<p>可以运行该命令单独压缩<code>CSS</code> 文件（注意！未修改或未更新的情况下是不会重新压缩的）；最后按预先定义好的的合并规则自动合并相关 <code>CSS</code> 文件。（ 命令化名全称： <code>compress app css</code> ）</p>
 
 <div class="highlight highlight-bash"><pre>grunt caca
 </pre></div>
 
-<p>可以运行该命令单独强制（未修改或未更新的情况下也会被再重新压缩一次）压缩" CSS " 文件；最后按预先定义好的的合并规则自动合并相关 " CSS " 文件。（ 命令化名全称： " compress app css absolutely " ）</p>
+<p>可以运行该命令单独强制（未修改或未更新的情况下也会被再重新压缩一次）压缩<code>CSS</code> 文件；最后按预先定义好的的合并规则自动合并相关 <code>CSS</code> 文件。（ 命令化名全称： <code>compress app css absolutely</code> ）</p>
 
 <div class="highlight highlight-bash"><pre>grunt cr
 </pre></div>
 
-<p>可以运行该命令压缩 " WEB " 表现形式的 " README " （ 工程描述 ）元素。（ 命令化名全称： " compress readme " ）</p>
+<p>可以运行该命令压缩 <code>WEB</code> 表现形式的 <code>README</code> （ 工程描述 ）元素。（ 命令化名全称： <code>compress readme</code> ）</p>
 
 <div class="highlight highlight-bash"><pre>grunt sprites
 </pre></div>
 
-<p>可以运行该命令按照预先定义好的规则合并指定目录下的需要被涉及的零散图片为 " CSS " 精灵图。</p>
+<p>可以运行该命令按照预先定义好的规则合并指定目录下的需要被涉及的零散图片为 <code>CSS</code> 精灵图。</p>
+
+<h4>
+<a name="%E5%8F%91%E5%B8%83%E6%A8%A1%E5%BC%8F" class="anchor" href="#%E5%8F%91%E5%B8%83%E6%A8%A1%E5%BC%8F"><span class="octicon octicon-link"></span></a>发布模式</h4>
 
 <div class="highlight highlight-bash"><pre>grunt p
 </pre></div>
 
-<p>如果你在发布前已经执行过压缩、合并的操作（任务），应该通过运行该命令发布工程。（ 命令化名全称： " publish " ）</p>
+<p>如果你在发布前已经执行过压缩、合并的操作（任务），应该通过运行该命令发布工程。（ 命令化名全称： <code>publish</code> ）</p>
 
 <div class="highlight highlight-bash"><pre>grunt pwc
 </pre></div>
 
-<p>可以运行该命令直接从编辑模式进入发布模式。（ 命令化名全称： " publish with compression " ）</p>
+<p>可以运行该命令直接从编辑模式进入发布模式。（ 命令化名全称： <code>publish with compression</code> ）</p>
+
+<h2>
+<a name="%E4%B8%BB%E8%A6%81%E5%B7%A5%E4%BD%9C%E6%B5%81" class="anchor" href="#%E4%B8%BB%E8%A6%81%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="octicon octicon-link"></span></a>主要工作流</h2>
+
+<p><strong>编辑模式</strong>：若 <code>app/</code> 目录下 <code>HTML</code> 压缩状态为未压缩，则当前项目处于编辑模式。</p>
+
+<p><strong>预发布模式</strong>：若 <code>app/resource/js/saike.web.starter.kit-bumblebee/</code> 目录下 <code>JavaScript</code> 存在未压缩文件，且 <code>app/</code> 目录下 <code>HTML</code> 不存在未压缩文件，则当前项目处于预发布模式。</p>
+
+<p><strong>发布模式</strong>：若 <code>app/resource/js/saike.web.starter.kit-bumblebee/</code> 目录下 <code>JavaScript</code> 不存在未压缩文件，且 <code>app/</code> 目录下 <code>HTML</code> 不存在未压缩文件，则当前项目处于发布模式。</p>
+
+<p>使工程进入发布模式的命令存在两者，集成了所有压缩、合并等任务的发布命令可以直接在编辑模式运行，另一个则需要在其运行前先单独运行所有压缩、合并等任务：</p>
+
+<ul>
+<li>
+<em>编辑模式 -&gt; 预发布模式 -&gt; 发布模式</em><br>
+</li>
+</ul>
+
+<blockquote>
+<p>grunt -&gt; grunt ca / caa -&gt; grunt p</p>
+</blockquote>
+
+<ul>
+<li>
+<em>编辑模式 -&gt; 发布模式</em><br>
+</li>
+</ul>
+
+<blockquote>
+<p>grunt -&gt; grunt pwc</p>
+</blockquote>
+
+<p>若要进入编辑模式的项目先前已被发布过，则需要通过 <code>grunt eap</code> 命令使工程进入编辑模式，而非 <code>grunt (default)</code>。预发布模式只是进行了压缩、合并等任务，发布任务还会包括移出指定类型文件、使用 <code>MD5</code> 散列替换视图文件关联的静态资源文件名、生成/更新 <code>HTML5</code> 应用程序缓存清单等任务：</p>
+
+<ul>
+<li>
+<em>发布模式 -&gt; 编辑模式 -&gt; 预发布模式 -&gt; 发布模式</em><br>
+</li>
+</ul>
+
+<blockquote>
+<p>grunt p / grunt pwc -&gt; grunt eap -&gt; grunt ca / caa -&gt; grunt p</p>
+</blockquote>
+
+<ul>
+<li>
+<em>发布模式 -&gt; 编辑模式 -&gt; 发布模式</em><br>
+</li>
+</ul>
+
+<blockquote>
+<p>grunt p / grunt pwc -&gt; grunt eap -&gt; grunt pwc</p>
+</blockquote>
 
 <h2>
 <a name="%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E7%8B%AC%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E6%8B%B7%E8%B4%9D" class="anchor" href="#%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E7%8B%AC%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E6%8B%B7%E8%B4%9D"><span class="octicon octicon-link"></span></a>如何创建独属于你的拷贝</h2>
 
-<p>如果你已经在自己的电脑上安装并配置了上述开发依赖，你可以克隆一份
+<p>如果你已经在自己的电脑上安装并配置了上述<a href="https://github.com/S-CHEXIANG/saike.web.starter.kit-bumblebee/tree/master#%E4%B8%BB%E8%A6%81%E5%BC%80%E5%8F%91%E4%BE%9D%E8%B5%96" title="点击 · Click">开发依赖</a>，你可以克隆一份
 <a href="https://github.com/S-CHEXIANG/saike.web.starter.kit-bumblebee/" title="点击 · Click"><em>"saike.web.starter.kit-bumblebee" 主要镜像</em></a> 副本至指定文件目录：</p>
 
 <div class="highlight highlight-bash"><pre>git clone https://github.com/S-CHEXIANG/saike.web.starter.kit-bumblebee.git
