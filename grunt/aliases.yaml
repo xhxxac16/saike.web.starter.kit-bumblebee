@@ -59,7 +59,7 @@
 #
 #     来自（ From ）：江苏省淮安市 ( Huai'an City, Jiang'su Province )
 #
-# 上次更新（ Last Update ）: 沈维忠（ Shen Weizhong / Tony Stark ），2014.10.31 15:36 AM
+# 上次更新（ Last Update ）: 沈维忠（ Shen Weizhong / Tony Stark ），2014.11.01 22:54 PM
 #
 
 
@@ -74,19 +74,21 @@
 #   \ \_\  \ \_\\ \____\\ \___/  \ \_\\ \____\\ \___x___/'
 #    \/_/   \/_/ \/____/ \/__/    \/_/ \/____/ \/__//__/
 
-
-# @name 压缩 & 合并
+# @name 预览
 # @desc
-
-preview_app:
+# 可以通过这个命令预览工程内具体、主要成果。
+# （ 命令全称： " preview app " ）
+pa:
   - 'express:app'
   - 'open:app'
   - 'express-keepalive'
 
-# @name 压缩 & 合并
+# @name 预览
 # @desc
-
-preview_rdm:
+# 工程中除了 " Markdown " 格式的 " README " （ 工程描述 ）文件之外，还
+# 包含 " HTML " 表现形式的 " README " （ 工程描述 ）元素。可以通过这个
+# 命令在本地预览/查看。（ 命令全称： " preview readme " ）
+pr:
   - 'express:readme'
   - 'open:readme'
   - 'express-keepalive'
@@ -103,9 +105,12 @@ preview_rdm:
 #   \ \____/\ \___,_\\ \_\\ \__\
 #    \/___/  \/__,_ / \/_/ \/__/
 
-# @name 开始编辑
+# @name 编辑
 # @desc
-
+# 工程中的 " HTML " 分为 3 种类型：可编辑版，预发布版，压缩版。默认任务
+# 会假定 " app/ " 目录下存在的都是压缩后的 " HTML " 文件，会先将这些
+# " HTML " 文件替换成从 " dev/html/ " 目录下抽取出的相对应、可编辑、未压
+# 缩的 " HTML " 文件。工程被克隆下来后，优先运行该命令，以进入编辑模式。
 default:
   - 'clean:app_html'
   - 'copy:extract_app_html'
@@ -113,7 +118,12 @@ default:
   - 'open:app'
   - 'watch'
 
-edit_after_publish:
+# @name 编辑
+# @desc
+# 工程被发布时会将未压缩的 JavaScript 移出可访问目录，以尽可能保证相关
+# 实现逻辑的保密性，所以如果工程为发布后的状态，那么一定要通过该命令进入
+# 正常的编辑模式。（ 命令全称： " edit after publish " ）
+eap:
   - 'clean:app_html'
   - 'copy:extract_app_html'
   - 'copy:extract_uncompressed_js'
@@ -121,15 +131,17 @@ edit_after_publish:
   - 'open:app'
   - 'watch'
 
-edit_rdm:
+# @name 编辑
+# @desc
+# 工程中除了 " Markdown " 格式的 " README " （ 工程描述 ）文件之外，还
+# 包含 " HTML " 表现形式的 " README " （ 工程描述 ）元素。可以运行该命
+# 令进入 TA 的编辑模式。（ 命令全称： " edit readme " ）
+er:
   - 'clean:readme_html'
   - 'copy:extract_readme_html'
   - 'express:readme'
   - 'open:readme'
   - 'watch'
-
-extract_js:
-  - 'copy:extract_uncompressed_js'
 
 
 
@@ -148,11 +160,18 @@ extract_js:
 #
 # @name 备份 HTML
 # @desc
-
-backup_app:
+# 在编辑模式中，可以运行该命令及时将对 "app" 目录下的 " HTML " 的编辑成
+# 果备份到 " dev/html " 目录下。（ 命令全称： " backup app html " ）
+bahtml:
   - 'copy:back_up_app_html'
 
-backup_rdm:
+#
+# @name 备份 HTML
+# @desc
+# 在编辑模式中，可以运行该命令及时将对项目根目录下的 " HTML " 的编辑成果
+# 备份到 " dev/gh-pages/html " 目录下。
+# （ 命令全称： " backup readme html " ）
+brhtml:
   - 'copy:back_up_readme_html'
 
 
@@ -167,10 +186,27 @@ backup_rdm:
 #   \ \____/ \ \_\\ \_\ \_\\ \__\
 #    \/___/   \/_/ \/_/\/_/ \/__/
 
-# @name 检测 JavaScript & CSS
+# @name 检查 JavaScript & CSS 语法、规范
 # @desc
-lint_app:
+# 在编辑模式中，可以单独运行该命令对指定目录下的 " CSS " 样式表文件、
+# " JavaScript " 脚本文件作语法、规范的检查。
+# （ 命令全称： " lint app " ）
+lall:
   - 'csslint:all_private'
+  - 'jshint:all_private'
+
+# @name 检查 CSS 语法、规范
+# @desc
+# 在编辑模式中，可以单独运行该命令对指定目录下的 " CSS " 样式表文件作语法、
+# 规范的检查。（ 命令全称： " lint app css " ）
+lac:
+  - 'csslint:all_private'
+
+# @name 检查 JavaScript 语法、规范
+# @desc
+# 在编辑模式中，可以单独运行该命令对指定目录下的 " JavaScript " 脚本文件作
+# 语法、规范的检查。（ 命令全称： " lint app js " ）
+laj:
   - 'jshint:all_private'
 
 
@@ -189,6 +225,10 @@ lint_app:
 
 # @name 压缩 & 合并
 # @desc
+# 可以运行该命令先备份所有对 " HTML " 的编辑成果；同时压缩 " HTML ",
+# " CSS ", " JavaScript " 文件（注意！未修改或未更新的情况下是不会重新
+# 压缩的）；最后按预先定义好的的合并规则自动合并相关 " CSS ",
+# " JavaScript " 文件。
 cmprs_app:
   - 'copy:back_up_app_html'
   - 'clean:app_html_not_release'
@@ -198,6 +238,12 @@ cmprs_app:
   - 'newer:uglify'
   - 'concat'
 
+# @name 强制压缩 & 合并
+# @desc
+# 可以运行该命令先备份所有对 " HTML " 的编辑成果；同时强制（未修改或未更
+# 新的情况下也会被再重新压缩一次）压缩 " HTML ", " CSS ",
+# " JavaScript " 文件；最后按预先定义好的的合并规则自动合并相关
+# " CSS ", " JavaScript " 文件。
 cmprs_app_ab:
   - 'copy:back_up_app_html'
   - 'clean:app_html_not_release'
@@ -209,6 +255,11 @@ cmprs_app_ab:
   - 'uglify'
   - 'concat'
 
+# @name 压缩 & 合并
+# @desc
+# 可以运行该命令单独压缩" JavaScript " 文件（注意！未修改或未更新的情况
+# 下是不会重新压缩的）；最后按预先定义好的的合并规则自动合并相关
+# " JavaScript " 文件。
 cmprs_app_js:
   - 'newer:uglify'
   - 'concat:pub_js_lt9'
@@ -216,6 +267,11 @@ cmprs_app_js:
   - 'concat:pub_js_gte9'
   - 'concat:pub_js_gte9'
 
+# @name 强制压缩 & 合并
+# @desc
+# 可以运行该命令单独强制（未修改或未更新的情况下也会被再重新压缩一次）压
+# 缩" JavaScript " 文件；最后按预先定义好的的合并规则自动合并相关
+# " JavaScript " 文件。
 cmprs_app_js_ab:
   - 'uglify'
   - 'concat:pub_js_lt9'
@@ -223,6 +279,10 @@ cmprs_app_js_ab:
   - 'concat:pub_js_gte9'
   - 'concat:pub_js_gte9'
 
+# @name 压缩 & 合并
+# @desc
+# 可以运行该命令单独压缩" CSS " 文件（注意！未修改或未更新的情况下是不会
+# 重新压缩的）；最后按预先定义好的的合并规则自动合并相关 " CSS " 文件。
 cmprs_app_css:
   - 'newer:cssmin:compress'
   - 'concat:pub_css_lt9'
@@ -230,6 +290,10 @@ cmprs_app_css:
   - 'concat:pub_css_gte9'
   - 'concat:pub_css_gte9_min'
 
+# @name 强制压缩 & 合并
+# @desc
+# 可以运行该命令单独强制（未修改或未更新的情况下也会被再重新压缩一次）压
+# 缩" CSS " 文件；最后按预先定义好的的合并规则自动合并相关 " CSS " 文件。
 cmprs_app_css_ab:
   - 'cssmin:compress'
   - 'concat:pub_css_lt9'
@@ -239,10 +303,13 @@ cmprs_app_css_ab:
 
 # @name 压缩 & 合并
 # @desc
+# 可以运行该命令压缩 " WEB " 表现形式的 " README " （ 工程描述 ）元素。
 cmprs_rdm: []
 
 # @name 压缩 & 合并
 # @desc
+# 可以运行该命令按照预先定义好的规则合并指定目录下的需要被涉及的零散图片
+# 为 " CSS " 精灵图。
 sprites:
   - 'sprite:ui'
 
@@ -258,7 +325,7 @@ sprites:
 #   \ \_\  \ \____/ \ \_,__/ /\____\\ \_\\/\____/ \ \_\ \_\
 #    \/_/   \/___/   \/___/  \/____/ \/_/ \/___/   \/_/\/_/
 
-# @name
+# @name 发布
 # @desc
 publish:
   - 'copy:backup_uncompressed_js'
@@ -267,6 +334,8 @@ publish:
   - 'open:app'
   - 'express-keepalive'
 
+# @name 发布
+# @desc
 publish_with_cmprs:
   - 'copy:back_up_app_html'
   - 'clean:app_html_not_release'
